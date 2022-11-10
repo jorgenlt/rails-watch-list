@@ -1,10 +1,40 @@
-<p>lists#show</p>
-
-<div>
-  <p><%= @list.name %></p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), patternpad.svg;">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+    <%# <p>Make your own lists of movies!</p> %>
+  </div>
 </div>
 
-<div>
-  <%= link_to 'Add movie to list', '#'  %>
+<div class="d-flex justify-content-center" id="test">
+  <div id="add-movie-form">
+    <h4><strong>Add a movie to the list</strong></h4>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment %>
+      <%= f.association :movie, input_html: {data: { controller: "tom-select"}} %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
 </div>
 
+
+
+
+
+<div class="d-flex justify-content-center">
+  <div class="grid-width">
+    <div class="grid">
+      <% @list.movies.each do |movie| %>
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+        <div class="card-product">
+          <img src="<%= movie.poster_url %>"/>
+          <div class="card-product-infos">
+            <h2><%= movie.title %></h2>
+            <p><%= movie.overview %></p>
+            <p><%= movie.rating %></p>
+            <p><em>"<%= bookmark.comment %>"</em></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

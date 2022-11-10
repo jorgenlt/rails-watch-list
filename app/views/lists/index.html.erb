@@ -1,32 +1,29 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.vecteezy.com/system/resources/previews/000/540/677/large_2x/movie-banner-alphabet-sign-marquee-light-bulb-vintage-vector.jpg);">
-  <div class="container">
-    <h1>Welcome to The Movie Lister</h1>
-    <p>Make your own lists of movies!</p>
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), patternpad.svg;">
+    <div class="container">
+      <h1>Welcome to The Movie Lister</h1>
+      <p>Make your own lists of movies!</p>
+    </div>
   </div>
-</div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="lists">
-  <div class="grid">
-    <% @lists.each do |list| %>
-      <div class="item-div">
-        <div class="item">
-          <h5><%= list.name %></h5>
-        </div>
+  <div class="d-flex justify-content-center">
+    <div id="lists ">
+      <div class="grid-index">
+        <% i = 1 %>
+        <% @lists.each do |list| %>
+          <%= link_to list_path(list) do %>
+            <div class="item-div">
+            <div><%= image_tag "https://picsum.photos/300/300?random=#{51 + i}" %></div>
+              <div class="item">
+                <h5><%= list.name %></h5>
+              </div>
+            </div>
+            <% i += 3 %>
+          <% end %>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
