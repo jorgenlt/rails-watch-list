@@ -1,0 +1,30 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.vecteezy.com/system/resources/previews/000/540/677/large_2x/movie-banner-alphabet-sign-marquee-light-bulb-vintage-vector.jpg);">
+  <div class="container">
+    <h1>Welcome to The Movie Lister</h1>
+    <p>Make your own lists of movies!</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+  <% @lists.each do |list| %>
+    <div class="grid">
+      <div class="item">
+        <h5><%= list.name %></h5>
+      </div>
+    </div>
+  <% end %>
+</div>
