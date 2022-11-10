@@ -19,12 +19,14 @@
 
 
 
-<div>
-  <% @lists.each do |list| %>
-    <div class="grid">
-      <div class="item">
-        <h5><%= list.name %></h5>
+<div id="lists">
+  <div class="grid">
+    <% @lists.each do |list| %>
+      <div class="item-div">
+        <div class="item">
+          <h5><%= list.name %></h5>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
