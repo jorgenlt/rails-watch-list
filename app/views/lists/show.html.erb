@@ -9,9 +9,9 @@
   <div id="add-movie-form">
     <h4><strong>Add a movie to the list</strong></h4>
     <%= simple_form_for [@list, @bookmark] do |f| %>
-      <%= f.input :comment %>
-      <%= f.association :movie, input_html: {data: { controller: "tom-select"}} %>
-      <%= f.button :submit %>
+      <%= f.input :comment, class: 'form-control' %>
+      <%= f.association :movie, input_html: {data: { controller: "tom-select"}}, class: 'form-control' %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
