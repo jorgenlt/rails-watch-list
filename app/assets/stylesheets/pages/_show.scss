@@ -62,7 +62,7 @@
 
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(69, 200, 226, 0.4);
   }
 }
 
@@ -75,4 +75,26 @@ a {
     opacity: 0.65;
 
   }
+}
+
+.card-product-infos a {
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+
+   &:hover {
+    color: #45c8e2;
+    // opacity: 0.5;
+   }
+
+
+}
+
+.card-product-infos {
+  div {
+    padding-top: 30px;
+  }
+
 }

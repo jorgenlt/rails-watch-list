@@ -32,6 +32,14 @@
             <p><%= movie.overview %></p>
             <p><%= movie.rating %></p>
             <p><em>"<%= bookmark.comment %>"</em></p>
+            <div>
+            <%= link_to "Delete from list", bookmark_path(bookmark), data: { turbo_method: :delete,
+                                                                     turbo_confirm: "Are you sure?" }
+                                                                    %>
+            </div>
+
+
+
           </div>
         </div>
       <% end %>
