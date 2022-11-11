@@ -8,9 +8,10 @@ require 'faker'
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Movie.destroy_all
 
-# 100.times do
-#   Movie.create(title: Faker::Movie.title, overview: Faker::Movie.quote, poster_url: "https://picsum.photos/200/300?random=#{rand(20..70)}", rating: rand(1..9))
-#   puts 'movie created'
-# end
-# puts 'finished'
+100.times do
+  Movie.create(title: Faker::Movie.title, overview: Faker::Movie.quote, poster_url: "https://picsum.photos/200/300?random=#{rand(20..70)}", rating: rand(1..9))
+  puts 'movie created'
+end
+puts 'finished'
