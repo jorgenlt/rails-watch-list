@@ -1,6 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), patternpad.svg;">
   <div class="container">
     <h1><%= @list.name %></h1>
+    <%= cl_image_tag @list.photo.key, height: 100, width: 100, crop: :fill, class: 'rounded-circle mt-2' %>
     <%# <p>Make your own lists of movies!</p> %>
   </div>
 </div>

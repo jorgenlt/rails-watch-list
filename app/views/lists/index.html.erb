@@ -11,16 +11,14 @@
   <div class="d-flex justify-content-center">
     <div id="lists ">
       <div class="grid-index">
-        <% i = 1 %>
         <% @lists.each do |list| %>
           <%= link_to list_path(list) do %>
             <div class="item-div">
-            <div><%= image_tag "https://picsum.photos/300/300?random=#{51 + i}" %></div>
+            <div><%= cl_image_tag list.photo.key, height: 300, width: 300, crop: :fill %></div>
               <div class="item">
                 <h5><%= list.name %></h5>
               </div>
             </div>
-            <% i += 3 %>
           <% end %>
         <% end %>
       </div>
